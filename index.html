@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Ropa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">FashionStore</a>
+
+            <div>
+                <a class="nav-link text-white d-inline" href="#inicio">Inicio |</a>
+                <a class="nav-link text-white d-inline" href="#productos"> Productos |</a>
+                <a class="nav-link text-white d-inline" href="#nosotros"> Nosotros |</a>
+                <a class="nav-link text-white d-inline" href="#contacto"> Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="p-5 text-center">
+        <h1>Bienvenido a FashionStore</h1>
+        <p>Ropa moderna para hombre y mujer</p>
+    </section>
+
+    <section id="productos" class="p-5 bg-light text-center">
+        <div class="container">
+            <h2 class="mb-4">Productos</h2>
+
+            <div class="mb-3 text-center">
+                <button id="btnTodos" class="btn btn-secondary" onclick="filtrarProductos('todos')">Todos</button>
+                <button id="btnHombre" class="btn btn-secondary" onclick="filtrarProductos('hombre')">Hombre</button>
+                <button id="btnMujer" class="btn btn-secondary" onclick="filtrarProductos('mujer')">Mujer</button>
+            </div>
+
+            <div id="listaProductos" class="row"></div>
+        </div>
+    </section>
+
+    <section class="p-5">
+        <div class="container">
+            <h2>Carrito</h2>
+            <ul id="carrito" class="list-group"></ul>
+            <h4 class="mt-3">Total: S/ <span id="total">0</span></h4>
+            <button class="btn btn-success mt-2" onclick="finalizarCompra()">Finalizar compra</button>
+        </div>
+    </section>
+
+    <section id="nosotros" class="p-5 bg-light text-center">
+        <h2>Nosotros</h2>
+        <p>Somos una tienda dedicada a ofrecer ropa moderna, cómoda y accesible.</p>
+    </section>
+
+    <section id="registro" class="p-5">
+        <div class="container">
+            <h2 class="mb-4 text-center">Registro</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Correo</label>
+                        <input type="text" id="correo" class="form-control" placeholder="Ej. usuario@gmail.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" id="password" class="form-control" placeholder="Ingrese su contraseña">
+                    </div>
+
+                    <button class="btn btn-primary w-100" onclick="registrarUsuario()">Registrarse</button>
+
+                </div>
+            </div>
+
+            <h4 class="mt-5">Usuarios registrados</h4>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped mt-3">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaUsuarios"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="footer text-white pt-4 pb-3">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold">FashionStore</h5>
+                    <p>Ropa moderna para hombre y mujer.</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p class="mb-1">Correo: tienda@gmail.com</p>
+                    <p class="mb-1">Teléfono: +51 987 654 321</p>
+                    <p class="mb-0">Lambayeque, Perú</p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Horario</h5>
+                    <p class="mb-0">Lunes a Sábado</p>
+                    <p class="mb-0">9:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center mb-0">© 2026 FashionStore - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
